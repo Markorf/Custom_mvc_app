@@ -19,7 +19,7 @@ export abstract class Component {
     }
     if (!this.parent) {
       if (!appElement) {
-        throw new Error("You must add div with id (#app)!");
+        throw new Error("You must (#app) container!");
       }
       appElement.innerHTML = "";
       appElement.appendChild(this._element);

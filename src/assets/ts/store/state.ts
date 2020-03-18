@@ -18,8 +18,10 @@ const getState = (action?: { type: string; payload?: any }) => {
       return _currentState.username;
     case "GET_FAV_COLORS":
       return _currentState.favColors;
+    case "GET_FAV_COLOR":
+      return _currentState.favColors[action.payload];
     default:
-      return cloneDeep(_currentState);
+      throw new Error("Action type " + action.type + " not registered");
   }
 };
 
@@ -32,7 +34,7 @@ const setState = (action: { type: string; payload?: any }) => {
       _currentState.favColors.push(action.payload);
       break;
     default:
-      throw new Error("Action type not registered");
+      throw new Error("Action type " + action.type + " not registered");
   }
 };
 

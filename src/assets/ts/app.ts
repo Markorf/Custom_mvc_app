@@ -10,3 +10,5 @@ Router.register("", () => {
 Router.register("random", () => {
   userController.random();
 });
+
+Router.register("favColor/{color}", userController.showFavColor);

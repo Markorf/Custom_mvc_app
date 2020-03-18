@@ -28,4 +28,14 @@ export class UserController {
     const x = new ThirdComponent(el, { text: "Bar bax" });
     console.log(x);
   }
+
+  public showFavColor(colorId: number) {
+    const favColor = getState({ type: "GET_FAV_COLOR", payload: colorId });
+    if (!favColor) {
+      console.log("Favcolor not found");
+      return;
+    }
+    new FirstComponent();
+    console.log(favColor);
+  }
 }
